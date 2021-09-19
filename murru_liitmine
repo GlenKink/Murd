@@ -1,6 +1,6 @@
 #include <stdio.h>
   int main () {
-        int x1, y1, x2, y2, x3, y3, div, i;
+        int x1, y1, x2, y2, x3, y3, k, i, t_arv, j22k;
 
         
         
@@ -23,19 +23,34 @@
 
        
         if (x3 > y3) {           // Murru lihtsustamine
-                div = y3;
+                k = y3;
         } else {
-                div = x3;
+                k = x3;
         }
 
-        for (i = div; i > 0; i--) {
+        for (i = k; i > 0; i--) {
                 if (x3 % i == 0 && y3 % i == 0) {
                         x3 = x3 / i;
                         y3 = y3 / i;
                 }
         }
+      // kui lugeja on väiksem kui nimetaja, siis väljastab programm hariliku murru
+             if (x3 < y3) {
+                 printf("Murru summa on %d/%d\n", x3, y3);   // Väljasta vastus
+             } else if (x3 % y3 == 0) {
+                     // kui lugejat jagades nimetajaga ei teki jääki
+                     t_arv = x3 / y3;
+                     printf("Täisosa väärtus: %d\n", t_arv);
+             } else {
+                     // leiame täisosa ja murdosa
+                     t_arv= x3 / y3;
+                     j22k = x3 % y3;
+                     printf("Murru summa segaarvuna: %d %d/%d\n",
+                             t_arv, j22k, y3);
+             }
+      return 0;
+       }
 
         
-        printf("Murru summa on %d/%d\n", x3, y3);   // Väljasta vastus
-        return 0;
-  }
+
+    
