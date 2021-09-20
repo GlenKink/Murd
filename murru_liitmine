@@ -1,10 +1,10 @@
 #include <stdio.h>
   int main () {
-        int x1, y1, x2, y2, x3, y3, k, i, t_arv, j22k;
+        int x1, y1, x2, y2, x3, y3, süt, i, t_arv, j22k;
 
         
         
-      printf("Sisesta lugeja A: "); // Küsin kasutajalt esimese murdarvu
+      printf("Sisesta lugeja A: "); // Küsin kasutajalt murdarvud
         scanf("%d", &x1);
         
       printf("Sisesta nimetaja A: ");
@@ -22,35 +22,35 @@
         y3 = (y1 * y2); // Arvutan nimetaja
 
        
-        if (x3 > y3) {           // Murru lihtsustamine
-                k = y3;
-        } else {
-                k = x3;
-        }
-
-        for (i = k; i > 0; i--) {
-                if (x3 % i == 0 && y3 % i == 0) {
-                        x3 = x3 / i;
-                        y3 = y3 / i;
-                }
-        }
-      // kui lugeja on väiksem kui nimetaja, siis väljastab programm hariliku murru
-             if (x3 < y3) {
-                 printf("Murru summa on %d/%d\n", x3, y3);   // Väljasta vastus
-             } else if (x3 % y3 == 0) {
-                     // kui lugejat jagades nimetajaga ei teki jääki
-                     t_arv = x3 / y3;
-                     printf("Täisosa väärtus: %d\n", t_arv);
-             } else {
-                     // leiame täisosa ja murdosa
-                     t_arv= x3 / y3;
-                     j22k = x3 % y3;
-                     printf("Murru summa segaarvuna: %d %d/%d\n",
-                             t_arv, j22k, y3);
+      for(i=1; i <= x3 && i <= y3; ++i)
+          {
+              // Kontrollib kas (i) on lugeja ja nimetaja tegur
+              if(x3%i==0 && y3%i==0)
+                  süt = i;
+          }
+      
+      for (i = süt; i > 0; i--) {
+                      if (x3 % i == 0 && y3 % i == 0) {
+                              x3 = x3 / i;
+                              y3 = y3 / i;
+                      }
+              }
+            // kui lugeja on väiksem kui nimetaja, siis väljastab programm hariliku murru
+                   if (x3 < y3) {
+                       printf("Murru summa on %d/%d\n", x3, y3);   // Väljasta vastus
+                   } else if (x3 % y3 == 0) {
+                           // kui lugejat jagades nimetajaga ei teki jääki
+                           t_arv = x3 / y3;
+                           printf("Täisosa väärtus: %d\n", t_arv);
+                   } else {
+                           // leiame täisosa ja murdosa
+                           t_arv= x3 / y3;
+                           j22k = x3 % y3;
+                           printf("Murru summa segaarvuna: %d %d/%d\n",
+                                   t_arv, j22k, y3);
+                   }
+            return 0;
              }
-      return 0;
-       }
 
-        
+              
 
-    
